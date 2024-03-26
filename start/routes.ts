@@ -24,4 +24,8 @@ Route.group(() => {
   Route.get('/', async () => {
     return { hello: 'world' }
   })
+
+  Route.resource('/moments', 'MomentsController').apiOnly()
+
+  Route.post('/moments/:id/comments', 'CommentsController.store')
 }).prefix('api')
